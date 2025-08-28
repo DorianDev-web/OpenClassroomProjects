@@ -128,20 +128,70 @@ header i {
    justify-content: space-between;
    align-items: center;
    box-sizing: border-box;
+   overflow: hidden;
+   position: relative;
+   transition: all 0.3s ease;
 }
 
 .menu .entrance-text {
    display: flex;
    flex-direction: column;
+   flex: 1;
 }
 
-.price {
+.entrance .price {
    color: rgba(53, 53, 53, 1);
    font-weight: 700;
    font-size: 15.04px;
    font-family: "Roboto", sans-serif;
    margin-right: 20px;
    margin-top: 30px;
+   transition: margin-right 0.3s ease;
+}
+
+.entrance .price-check {
+   background-color: #99E2D0;
+   color: white;
+   width: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 0 15px 15px 0;
+   transition: width 0.3s ease;
+   overflow: hidden;
+   flex-shrink: 0;
+}
+
+.entrance .price-check i {
+   opacity: 0;
+   transform: scale(.8);
+   transition: opacity 0.2s ease;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   background-color: white;
+   color: #99E2D0;
+   font-size: 12px;
+}
+
+/* Hover */
+
+.entrance:hover .price-check {
+   width: 59px;
+   height: 69px;
+}
+
+.entrance:hover .price-check i {
+   opacity: 1;
+   transform: scale(1);
+}
+
+.entrance:hover .price {
+   margin-right: 20px;
 }
 
 /***** Menu Plats *****/
