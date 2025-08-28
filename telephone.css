@@ -11,7 +11,8 @@ body {
 
 .main-container {
    width: 100%;
-   max-width: 1440px;
+   max-width: 375px;
+   height: auto;
    box-sizing: border-box;
 }
 
@@ -33,13 +34,14 @@ header img {
 }
 
 .location {
-   background-color: #EAEAEA;
+   background-color: rgba(234, 234, 234, 1);
    color: #353535;
    width: 100%;
    display: flex;
    align-items: center;
    justify-content: center;
    gap: 17px;
+   box-shadow: rgba(0, 0, 0, 0.25);
 }
 
 .location i {
@@ -54,22 +56,25 @@ header img {
    flex-direction: column;
    align-items: center;
    justify-content: center;
+   text-align: center;
    background-color: #f8f8f8;
    margin: 0;
    padding: 0;
-   padding-bottom: 25px;
+   padding-bottom: 50px;
 }
 
 .menu h1 {
    font-weight: 700;
-   font-size: 40px;
-   margin-bottom: 15px;
+   font-size: 24px;
+   font-style: 'Roboto';
+   padding-top: 10px;
 }
 
 .menu p {
    font-weight: 300;
    font-size: 18px;
-   color: #353535;
+   color: #6c6c6c;
+   margin: 0;
    margin-bottom: 25px;
 }
 
@@ -88,26 +93,29 @@ header img {
 /**** Fonctionnement ****/
 
 .fonctionnement {
-   padding-top: 50px;
-   padding-bottom: 50px;
-   padding-left: 180px;
-   padding-right: 180px;
-   gap: 25px;
+   width: 100%;
+   background-color: rgba(255, 255, 255, 1);
+   padding-top: 20px;
 }
 
 .fonctionnement h2 {
    font-weight: 700;
    font-size: 24px;
+   padding-left: 20px;
 }
 
-.fonctionnement form {
+.fonctionnement .steps-list {
    display: flex;
-   flex-direction: row;
+   flex-direction: column;
    border-style: none;
+   align-items: center;
+   list-style: none;
    gap: 25px;
+   box-shadow: rgba(0, 0, 0, 0.25);
 }
 
-.fonctionnement button {
+.steps-list li {
+   position: relative;
    background-color: #F6F6F6;
    width: 322.49px;
    height: 72.38px;
@@ -120,11 +128,31 @@ header img {
    align-items: center;
    cursor: pointer;
    box-shadow: black;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   counter-increment: step;
+}
+
+.steps-list li::before {
+  content: counter(step); /* Numéro automatique */
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #9356DC; /* Violet */
+  color: white;
+  font-weight: bold;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
 }
 
 .fonctionnement i {
    color: #353535;
-   margin: 15px;
+   margin-right: 15px;
 }
 
 .fonctionnement .fa-store {
@@ -136,27 +164,29 @@ header img {
 .restaurant {
    background-color: #f8f8f8;
    align-items: center;
-   padding-right: 180px;
-   padding-left: 180px;
    padding-top: 10px;
-   padding-bottom: 10px;
-   gap: 28px;
+   padding-bottom: 50px;
+   gap: 18px;
+}
+
+.restaurant h2 {
+   padding-left: 20px;
 }
 
 .restaurant-cards {
    display: flex;
    flex-wrap: wrap;
+   justify-content: center;
    gap: 50px;
-   padding-bottom: 20px;
 }
 
 .restaurant-cards .card {
-   width: 490px;
+   width: 340px;
    box-shadow: rgba(0, 0, 0, 0.1);
 }
 
 .restaurant-cards img {
-   width: 490px;
+   width: 346px;
    height: 200px;
    border-top-left-radius: 15px;
    border-top-right-radius: 15px;
@@ -211,17 +241,17 @@ header img {
 
 .heart-gradient {
    background: linear-gradient(45deg, #FF79DA, #9356DC);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
 }
 
 /**** Footer ****/
 
 footer {
    background-color: rgba(53, 53, 53, 1);
-   padding-top: 30px;
-   padding-bottom: 30px;
+   padding-top: 22px;
+   padding-bottom: 22px;
    padding-left: 25px;
    padding-right: 25px;
    gap: 16px;
@@ -229,14 +259,15 @@ footer {
 
 .footer-content {
    display: flex;
-   justify-content: right;
-   align-items: center;
+   flex-direction: column;
+   align-items: flex-start;
 }
 
 .footer-links {
    list-style: none;
    display: flex;
-   gap: 30px;
+   flex-direction: column;
+   gap: 15px;
    margin: 0;
    padding: 0;
 }
@@ -245,6 +276,7 @@ footer {
    color: white;
    text-decoration: none;
    font-size: 16px;
+   font-weight: 500;
 }
 
 .footer-links li i {
@@ -255,7 +287,117 @@ footer {
 .footer-logo {
    font-family: 'Shrikhand', cursive;
    font-size: 18px;
+   font-weight: 400;
    font-style: italic;
    color: white;
-   margin-left: 100px;
+   margin-bottom: 15px;
+}
+
+/**** Responsive ****/
+
+@media screen and (min-width: 1440px) {
+
+   /**** Général ****/
+
+   .main-container {
+      width: 100%;
+      max-width: 1440px;
+   }
+
+   /**** Menu ****/
+
+   .menu {
+      padding-bottom: 25px;
+   }
+
+   .menu h1 {
+      font-size: 40px;
+      margin-bottom: 15px;
+   }
+
+   /**** Fonctionnement ****/
+
+   .fonctionnement {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      padding-left: 180px;
+      padding-right: 180px;
+      gap: 25px;
+   }
+
+   .fonctionnement h2 {
+      margin-bottom: 30px;
+   }
+
+   .fonctionnement .steps-list {
+      display: flex;
+      flex-direction: row;
+      border-style: none;
+      gap: 25px;
+   }
+
+   .steps-list i {
+      color: #353535;
+      margin: 15px;
+   }
+
+   .fonctionnement .fa-store {
+      color: #9356DC;
+   }
+
+   /**** Restaurants ****/
+
+   .restaurant {
+      padding-right: 180px;
+      padding-left: 180px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      gap: 28px;
+   }
+
+   .restaurant h2 {
+      margin-bottom: 30px;
+   }
+
+   .restaurant-cards {
+      padding-bottom: 20px;
+   }
+
+   .restaurant-cards .card {
+      width: 490px;
+   }
+
+   .restaurant-cards img {
+      width: 490px;
+   }
+
+   /**** Footer ****/
+
+   footer {
+      padding-top: 30px;
+      padding-bottom: 30px;
+   }
+
+   .footer-content {
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      bottom: -40px;
+      padding-right: 50px;
+   }
+
+   .footer-links {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      position: relative;
+      right: 275px;
+      gap: 30px;
+   }
+
+   .footer-logo {
+      margin-left: 100px;
+   }
+
 }
