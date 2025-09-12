@@ -1,356 +1,310 @@
 /***** Général *****/
-
 body {
-   display: flex;
-   justify-content: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
 }
+
 
 .main-container {
-   width: 100%;
-   max-width: 375px;
-   box-sizing: border-box;
+  width: 100%;
 }
 
-/**** En tête ****/
 
+/**** En-tête ****/
 header {
-   background-color: white;
-   width: 100%;
-   display: flex;
-   position: relative;
-   align-items: center;
-   justify-content: center;
-   padding: 20px 0;
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
 }
+
 
 header img {
-   width: 197px;
-   height: 36px;
+  width: 197px;
+  height: 36px;
 }
+
 
 header i {
-   position: absolute;
-   left: 20px;
-   font-size: 20px;
-   color: rgba(53, 53, 53, 1);
-   cursor: pointer;
-   top: 50%;
-   transform: translateY(-50%);
+  position: absolute;
+  left: 20px;
+  font-size: 20px;
+  color: #353535;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
 }
+
 
 /***** Image *****/
-
 .photo img {
-   width: 100%;
-   height: 275px;
-   top: 96px;
-   object-fit: cover;
+  width: 100%;
+  height: 275px;    
+  object-fit: cover;
 }
 
-/***** Menu Entrées *****/
 
+/***** Menu *****/
 .menu {
-   background-color: rgba(246, 246, 246, 1);
-   gap: 40px;
-   position: relative;
-   border-top-left-radius: 40px;
-   border-top-right-radius: 40px;
-   margin-top: -60px;
+  background-color: #f6f6f6;
+  gap: 40px;
+  position: relative;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  margin: 0;    
 }
+
 
 .menu-title {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex-direction: row;
-   gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
 }
+
 
 .menu-title h1 {
-   font-weight: 400;
-   font-size: 28px;
-   font-family: 'Shrikhand', cursive;;
+  font: 400 28px/1.2 'Shrikhand', cursive;
 }
 
-.menu h2 {
-   font-family: "Roboto", sans-serif;
-   font-weight: 300;
-   font-size: 16px;
-   text-transform: uppercase;
-   position: relative;
-   display: inline-block;
-   padding-bottom: 8px;
-   margin-left: -170px;
+
+.menu .title {
+  width: 100%;
+  max-width: 349px;  
+  margin: 20px auto 10px;
+  padding-left: 20px;
+  position: relative;
 }
 
-.menu h2::after {
-   content: "";
-   position: absolute;
-   left: 0;
-   bottom: 0;
-   width: 40px;
-   height: 3px;
-   background-color: #99E2D0;
+
+/* Soulignement qui suit le padding-left */
+.menu .title::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background-color: #99E2D0;
 }
 
-.menu h3 {
-   font-family: "Roboto", sans-serif;
-   font-weight: 500;
-   font-style: 18px;
-   margin-left: 20px;
-   margin-bottom: 0;
-   margin-top: 12px;
+
+.menu .title h2 {
+  display: block;
+  margin: 0;
+  font: 300 16px/1.2 "Roboto", sans-serif;
+  text-transform: uppercase;
 }
 
-.menu p {
-   font-weight: 300;
-   font-size: 15.04px;
-   font-family: "Roboto", sans-serif;
-   margin-left: 20px;
-   margin-top: 2px;
+
+/***** Cartes *****/
+.menu-entrance,
+.menu-plats,
+.menu-desserts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
 }
 
-.menu-entrance {
-   display: flex;
-   flex-direction: column;
-   gap: 12px;
-   align-items: center;
-   box-shadow: rgba(0, 0, 0, 0.1);
-}
 
 .menu .entrance {
-   background-color: rgba(255, 255, 255, 1);
-   border-radius: 15.04px;
-   width: 349px;
-   margin: 0;
-   padding: 0;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   box-sizing: border-box;
-   overflow: hidden;
-   position: relative;
-   transition: all 0.3s ease;
+  background-color: #fff;
+  border-radius: 15.04px;
+  width: 100%;
+  max-width: 349px;  
+  margin: 0 auto;  
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
 }
+
 
 .menu .entrance-text {
-   display: flex;
-   flex-direction: column;
-   flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
+
 
 .entrance .price {
-   color: rgba(53, 53, 53, 1);
-   font-weight: 700;
-   font-size: 15.04px;
-   font-family: "Roboto", sans-serif;
-   margin-right: 20px;
-   margin-top: 30px;
-   transition: margin-right 0.3s ease;
+  color: #353535;
+  font: 700 15.04px "Roboto", sans-serif;
+  margin-right: 20px;
+  margin-top: 30px;
+  transition: margin-right 0.3s ease;
 }
+
 
 .entrance .price-check {
-   background-color: #99E2D0;
-   color: white;
-   width: 0;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   border-radius: 0 15px 15px 0;
-   transition: width 0.3s ease;
-   overflow: hidden;
-   flex-shrink: 0;
+  background-color: #99E2D0;
+  color: #fff;
+  width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 15px 15px 0;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  flex-shrink: 0;
 }
+
 
 .entrance .price-check i {
-   opacity: 0;
-   transform: scale(.8);
-   transition: opacity 0.2s ease;
-   display: inline-flex;
-   justify-content: center;
-   align-items: center;
-
-   width: 20px;
-   height: 20px;
-   border-radius: 50%;
-   background-color: white;
-   color: #99E2D0;
-   font-size: 12px;
+  opacity: 0;
+  transform: scale(.8);
+  transition: opacity 0.2s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #99E2D0;
+  font-size: 12px;
 }
+
 
 /* Hover */
-
 .entrance:hover .price-check {
-   width: 59px;
-   height: 69px;
+  width: 59px;
+  height: 69px;
 }
-
 .entrance:hover .price-check i {
-   opacity: 1;
-   transform: scale(1);
+  opacity: 1;
+  transform: scale(1);
 }
-
 .entrance:hover .price {
-   margin-right: 20px;
+  margin-right: 20px;
 }
 
-/***** Menu Plats *****/
 
-.menu-plats {
-   display: flex;
-   flex-direction: column;
-   gap: 12px;
-   align-items: center;
-   box-shadow: rgba(0, 0, 0, 0.1);
+/***** Textes des cartes *****/
+.menu h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;  
+  margin: 12px 0 0 20px;
 }
 
-/**** Menu Desserts ****/
 
-.menu-desserts {
-   display: flex;
-   flex-direction: column;
-   gap: 12px;
-   align-items: center;
-   box-shadow: rgba(0, 0, 0, 0.1);
+.menu p {
+  font: 300 15.04px "Roboto", sans-serif;
+  margin: 2px 0 12px 20px;
 }
+
 
 /**** Bouton Commander ****/
-
 .commander {
-   padding-top: 25px;
-   padding-bottom: 35px;
+  padding: 25px 0 35px;
 }
-
 .commander button {
-   width: 186px;
-   height: 50px;
-   border-radius: 25px;
-   background: linear-gradient(rgba(255, 121, 218, 1), rgba(147, 86, 220, 1));
-   border-style: none;
-   color: white;
-   cursor: pointer;
+  width: 186px;
+  height: 50px;
+  border-radius: 25px;
+  background: linear-gradient(#ff79da, #9356dc);
+  border: none;
+  color: #fff;
+  cursor: pointer;
 }
+
 
 /**** Footer ****/
-
 footer {
-   background-color: rgba(53, 53, 53, 1);
-   padding-top: 22px;
-   padding-bottom: 22px;
-   padding-left: 25px;
-   padding-right: 25px;
-   gap: 16px;
-   margin-top: 0;
+  background-color: #353535;
+  padding: 22px 25px;
+  gap: 16px;
+  margin-top: 0;
 }
-
 .footer-content {
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-
 .footer-links {
-   list-style: none;
-   display: flex;
-   flex-direction: column;
-   gap: 15px;
-   margin: 0;
-   padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
 }
-
 .footer-links li a {
-   color: white;
-   text-decoration: none;
-   font-size: 16px;
-   font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  font: 500 16px "Roboto", sans-serif;
 }
-
 .footer-links li i {
-   color: white;
-   padding-right: 10px;
+  color: #fff;
+  padding-right: 10px;
 }
-
 .footer-logo {
-   font-family: 'Shrikhand', cursive;
-   font-size: 18px;
-   font-weight: 400;
-   font-style: italic;
-   color: white;
-   margin-bottom: 15px;
+  font-family: 'Shrikhand', cursive;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  color: #fff;
+  margin-bottom: 15px;
 }
 
-@media screen and (min-width: 1440px) {
- 
-   /***** Général *****/
 
-.main-container {
-   max-width: 1440px;
+/* ====== Desktop (≥769px) ====== */
+@media screen and (min-width: 769px) {
+
+
+  .photo img { height: 480px; }
+
+
+  .menu {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: -50px;
+  }
+
+
+  .menu-title h1 { margin-top: 50px; }
+  .menu-title i  { margin-top: 30px; }
+
+
+  .menu .title {
+    max-width: 634px;
+  }
+  .menu .entrance {
+    max-width: 634px;
+  }
 }
 
-/**** En tête ****/
-
-header img {
-   width: 200px;
-   height: 34.2px;
-}
-
-/***** Image *****/
-
-.photo img {
-   width: 100%;
-   height: 480px;
-}
-
-/***** Menu Entrées *****/
-
-.menu {
-   width: 1055px;
-   margin-top: -50px;
-   left: 193px;
-}
-
-.menu-title h1 {
-   margin-top: 50px;
-}
-
-.menu-title i {
-   margin-top: 30px;
-}
-
-.menu h2 {
-   margin-left: -310px;
-}
-
-.menu .entrance {
-   width: 634px;
-}
-
-/**** Footer ****/
-
-footer {
-   padding-top: 30px;
-   padding-bottom: 30px;
-}
-
-.footer-content {
-   display: flex;
-   align-items: flex-end;
-   position: relative;
-   bottom: -40px;
-   padding-right: 50px;
-}
-
-.footer-links {
-   display: flex;
-   flex-direction: row;
-   justify-content: flex-end;
-   position: relative;
-   right: 275px;
-   gap: 30px;
-}
-
-.footer-logo {
-   margin-left: 100px;
-}
-
+@media screen and (min-width: 1024px) {
+    
+  footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .footer-content {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    bottom: -40px;
+    padding-right: 50px;
+  }
+  .footer-links {
+    flex-direction: row;
+    justify-content: flex-end;
+    position: relative;
+    right: 275px;
+    gap: 30px;
+  }
+  .footer-logo { 
+    margin-left: 100px;
+ }
 }
