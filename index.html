@@ -14,7 +14,8 @@
    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
-<body>
+<body class="page-telephone">
+   <div class="loader"></div>
    <div class="main-container">
       <header>
          <img src="images/logo/ohmyfood.png" alt="Logo Ohmyfood">
@@ -49,14 +50,18 @@
                   <article class="card">
                      <img src="images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
                         alt="Photo d'un plat avec une assiette et du pain">
-                        <span class="new">Nouveau</span>
+                     <span class="new">Nouveau</span>
                      <div class="card-content">
                         <div class="card-text">
                            <h3><span>La palette du goût</span></h3>
                            <p>Ménilmontant</p>
                         </div>
                         <div class="card-rating">
-                           <i class="fa-regular fa-heart"></i>
+                           <input type="checkbox" id="heart1" class="heart-checkbox">
+                           <label for="heart1" class="heart">
+                              <i class="fa-regular fa-heart"></i>
+                              <i class="fa-solid fa-heart"></i>
+                           </label>
                         </div>
                      </div>
                   </article>
@@ -71,7 +76,11 @@
                            <p>Charonne</p>
                         </div>
                         <div class="card-rating">
-                           <i class="fa-solid fa-heart heart-gradient"></i>
+                           <input type="checkbox" id="heart2" class="heart-checkbox">
+                           <label for="heart2" class="heart">
+                              <i class="fa-regular fa-heart"></i>
+                              <i class="fa-solid fa-heart"></i>
+                           </label>
                         </div>
                      </div>
                   </article>
@@ -85,7 +94,11 @@
                            <p>Cité Rouge</p>
                         </div>
                         <div class="card-rating">
-                           <i class="fa-regular fa-heart"></i>
+                           <input type="checkbox" id="heart3" class="heart-checkbox">
+                           <label for="heart3" class="heart">
+                              <i class="fa-regular fa-heart"></i>
+                              <i class="fa-solid fa-heart"></i>
+                           </label>
                         </div>
                      </div>
                   </article>
@@ -100,7 +113,11 @@
                            <p>Folie-Méricourt</p>
                         </div>
                         <div class="card-rating">
-                           <i class="fa-regular fa-heart"></i>
+                           <input type="checkbox" id="heart4" class="heart-checkbox">
+                           <label for="heart4" class="heart">
+                              <i class="fa-regular fa-heart"></i>
+                              <i class="fa-solid fa-heart"></i>
+                           </label>
                         </div>
                      </div>
                   </article>

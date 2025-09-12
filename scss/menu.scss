@@ -1,13 +1,6 @@
-// ================== Variables ==================
-$font-main: "Roboto", sans-serif;
-$font-logo: "Shrikhand", cursive;
-$color-text: #353535;
-$color-bg: #f6f6f6;
-$color-accent: #99E2D0;
-$color-dark: #353535;
-$gradient-btn: linear-gradient(#ff79da, #9356dc);
+.page-menu {
 
-// ================== Général ==================
+/***** Général *****/
 body {
   display: flex;
   justify-content: center;
@@ -18,7 +11,10 @@ body {
   width: 100%;
 }
 
-// ================== Header ==================
+
+
+
+/**** En-tête ****/
 header {
   background-color: #fff;
   width: 100%;
@@ -27,287 +23,421 @@ header {
   align-items: center;
   justify-content: center;
   padding: 20px 0;
-
-  img {
-    width: 197px;
-    height: 36px;
-  }
-
-  i {
-    position: absolute;
-    left: 20px;
-    font-size: 20px;
-    color: $color-text;
-    cursor: pointer;
-    top: 50%;
-    transform: translateY(-50%);
-  }
 }
 
-// ================== Image ==================
-.photo {
-  img {
-    width: 100%;
-    height: 275px;
-    object-fit: cover;
-  }
+
+
+
+header img {
+  width: 197px;
+  height: 36px;
 }
 
-// ================== Menu ==================
+
+
+
+header i {
+  position: absolute;
+  left: 20px;
+  font-size: 20px;
+  color: #353535;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+
+
+/***** Image *****/
+.photo img {
+  width: 100%;
+  height: 275px;
+  object-fit: cover;
+}
+
+
+
+
+/***** Menu *****/
 .menu {
-  background-color: $color-bg;
+  background-color: #f6f6f6;
   gap: 40px;
   position: relative;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   margin: 0;
+}
 
-  .menu-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 20px;
 
-    h1 {
-      font: 400 28px/1.2 $font-logo;
-    }
-  }
 
-  .title {
-    width: 100%;
-    max-width: 349px;
-    margin: 20px auto 10px;
-    padding-left: 20px;
+
+.menu-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+  .rating {
     position: relative;
+    bottom: 25px;
+    left: 10px;
 
-    h2 {
-      margin: 0;
-      font: 300 16px/1.2 $font-main;
-      text-transform: uppercase;
+    .heart-checkbox {
+      display: none;
     }
 
-    &::after {
-      content: "";
-      position: absolute;
-      left: 20px;
-      bottom: 0;
-      width: 40px;
-      height: 3px;
-      background-color: $color-accent;
-    }
-  }
-
-  // Sections menu
-  &-entrance,
-  &-plats,
-  &-desserts {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-  }
-
-  .entrance {
-    background-color: #fff;
-    border-radius: 15.04px;
-    width: 100%;
-    max-width: 349px;
-    margin: 0 auto;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    transition: all 0.3s ease;
-
-    .entrance-text {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .price {
-      color: $color-text;
-      font: 700 15.04px $font-main;
-      margin-right: 20px;
-      margin-top: 30px;
-      transition: margin-right 0.3s ease;
-    }
-
-    .price-check {
-      background-color: $color-accent;
-      color: #fff;
-      width: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 0 15px 15px 0;
-      transition: width 0.3s ease;
-      overflow: hidden;
-      flex-shrink: 0;
+    .heart {
+      cursor: pointer;
+      font-size: 24px;
+      position: relative;
 
       i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.3s ease;
+      }
+
+      .fa-regular {
+        color: grey;
+      }
+
+      .fa-solid {
         opacity: 0;
-        transform: scale(.8);
-        transition: opacity 0.2s ease;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: #fff;
-        color: $color-accent;
-        font-size: 12px;
+        background: linear-gradient(45deg, rgba(147, 86, 220, 1), rgba(255, 121, 218, 1));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        transform: scale(0.5);
       }
     }
 
-    // Hover
-    &:hover {
-      .price-check {
-        width: 59px;
-        height: 69px;
-
-        i {
-          opacity: 1;
-          transform: scale(1);
-        }
+    .heart-checkbox:checked+.heart {
+      .fa-regular {
+        opacity: 0;
       }
 
-      .price {
-        margin-right: 20px;
+      .fa-solid {
+        opacity: 1;
+        transform: scale(1);
       }
     }
-  }
-
-  // Textes
-  h3 {
-    font-family: $font-main;
-    font-weight: 500;
-    font-size: 18px;
-    margin: 12px 0 0 20px;
-  }
-
-  p {
-    font: 300 15.04px $font-main;
-    margin: 2px 0 12px 20px;
   }
 }
 
-// ================== Bouton Commander ==================
+
+
+
+.menu-title h1 {
+  font: 400 28px/1.2 'Shrikhand', cursive;
+}
+
+
+
+
+.menu .title {
+  width: 100%;
+  max-width: 349px;
+  margin: 20px auto 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+
+
+
+/* Soulignement qui suit le padding-left */
+.menu .title::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: -5px;
+  width: 40px;
+  height: 3px;
+  background-color: #99E2D0;
+}
+
+
+
+
+.menu .title h2 {
+  display: block;
+  margin: 0;
+  font: 300 16px/1.2 "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+
+
+
+
+/***** Cartes *****/
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu .entrance {
+  opacity: 0;
+  animation: fade-in-up 0.6s ease forwards;
+}
+
+
+.menu-entrance .entrance:nth-child(2) { animation-delay: 0.2s; }
+.menu-entrance .entrance:nth-child(3) { animation-delay: 0.4s; }
+.menu-entrance .entrance:nth-child(4) { animation-delay: 0.6s; }
+.menu-entrance .entrance:nth-child(5) { animation-delay: 0.8s; }
+
+
+.menu-plats .entrance:nth-child(2) { animation-delay: 1.2s; }
+.menu-plats .entrance:nth-child(3) { animation-delay: 1.4s; }
+.menu-plats .entrance:nth-child(4) { animation-delay: 1.6s; }
+
+
+.menu-desserts .entrance:nth-child(2) { animation-delay: 2.2s; }
+.menu-desserts .entrance:nth-child(3) { animation-delay: 2.4s; }
+.menu-desserts .entrance:nth-child(4) { animation-delay: 2.6s; }
+.menu-desserts .entrance:nth-child(5) { animation-delay: 2.8s; }
+
+
+.menu-entrance,
+.menu-plats,
+.menu-desserts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+
+.menu .entrance {
+  background-color: #fff;
+  border-radius: 15.04px;
+  width: 100%;
+  max-width: 349px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+
+
+
+.menu .entrance-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+
+
+
+.entrance .price {
+  color: #353535;
+  font: 700 15.04px "Roboto", sans-serif;
+  margin-right: 20px;
+  margin-top: 30px;
+  transition: margin-right 0.3s ease;
+}
+
+
+
+
+.entrance .price-check {
+  background-color: #99E2D0;
+  color: #fff;
+  width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 15px 15px 0;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+
+
+
+.entrance .price-check i {
+  opacity: 0;
+  transform: scale(.8);
+  transition: opacity 0.2s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #99E2D0;
+  font-size: 12px;
+}
+
+
+
+
+/* Hover */
+.entrance:hover .price-check {
+  width: 59px;
+  height: 69px;
+}
+
+.entrance:hover .price-check i {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.entrance:hover .price {
+  margin-right: 20px;
+}
+
+
+
+
+/***** Textes des cartes *****/
+.menu h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  margin: 12px 0 0 20px;
+}
+
+
+
+
+.menu p {
+  font: 300 15.04px "Roboto", sans-serif;
+  margin: 2px 0 12px 20px;
+}
+
+
+
+
+/**** Bouton Commander ****/
 .commander {
   padding: 25px 0 35px;
-
-  button {
-    width: 186px;
-    height: 50px;
-    border-radius: 25px;
-    background: $gradient-btn;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-  }
 }
 
-// ================== Footer ==================
+.commander button {
+  width: 186px;
+  height: 50px;
+  border-radius: 25px;
+  background: linear-gradient(#ff79da, #9356dc);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0, 3 ease;
+}
+
+.commander button:hover {
+  background: linear-gradient(#ffa4e6, #a56eed);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/**** Footer ****/
 footer {
-  background-color: $color-dark;
+  background-color: #353535;
   padding: 22px 25px;
   gap: 16px;
   margin-top: 0;
-
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .footer-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 0;
-    padding: 0;
-
-    li {
-      a {
-        color: #fff;
-        text-decoration: none;
-        font: 500 16px $font-main;
-      }
-
-      i {
-        color: #fff;
-        padding-right: 10px;
-      }
-    }
-  }
-
-  .footer-logo {
-    font-family: $font-logo;
-    font-size: 18px;
-    font-weight: 400;
-    font-style: italic;
-    color: #fff;
-    margin-bottom: 15px;
-  }
 }
 
-// ================== Media Queries ==================
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li a {
+  color: #fff;
+  text-decoration: none;
+  font: 500 16px "Roboto", sans-serif;
+}
+
+.footer-links li i {
+  color: #fff;
+  padding-right: 10px;
+}
+
+.footer-logo {
+  font-family: 'Shrikhand', cursive;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+
+
+
+/* ====== Desktop (≥769px) ====== */
 @media screen and (min-width: 769px) {
-  .photo img {
-    height: 480px;
-  }
+
+  .photo img { height: 480px; }
+
 
   .menu {
     margin-left: 10%;
     margin-right: 10%;
-    margin-top: -50px;
+    margin-top: -50px;   /* OK uniquement en desktop */
+  }
 
-    .menu-title {
-      h1 {
-        margin-top: 50px;
-      }
-      i {
-        margin-top: 30px;
-      }
-    }
 
-    .title {
-      max-width: 634px;
-    }
+  .menu-title h1 { margin-top: 50px; }
+  .menu-title i  { margin-top: 30px; }
 
-    .entrance {
-      max-width: 634px;
-    }
+
+  /* Même gabarit pour les titres et les cartes en desktop */
+  .menu .title {
+    max-width: 634px;
+  }
+  .menu .entrance {
+    max-width: 634px;
   }
 
   footer {
     padding-top: 30px;
     padding-bottom: 30px;
-
-    .footer-content {
-      display: flex;
-      align-items: flex-end;
-      position: relative;
-      bottom: -40px;
-      padding-right: 50px;
-    }
-
-    .footer-links {
-      flex-direction: row;
-      justify-content: flex-end;
-      position: relative;
-      right: 275px;
-      gap: 30px;
-    }
-
-    .footer-logo {
-      margin-left: 100px;
-    }
   }
+  .footer-content {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    bottom: -40px;
+    padding-right: 50px;
+  }
+  .footer-links {
+    flex-direction: row;
+    justify-content: flex-end;
+    position: relative;
+    right: 275px;
+    gap: 30px;
+  }
+  .footer-logo { margin-left: 100px; }
 }
-
+}
