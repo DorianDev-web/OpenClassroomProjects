@@ -63,6 +63,10 @@
 }
 .page-menu .menu .menu-title h1 {
   font: 400 28px/1.2 "Shrikhand", cursive;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
 .page-menu .menu .menu-title .rating {
   position: relative;
@@ -218,14 +222,11 @@
   justify-content: center;
   align-items: center;
   border-radius: 0 15px 15px 0;
-  transition: width 0.3s ease;
   overflow: hidden;
   flex-shrink: 0;
 }
 .page-menu .menu .entrance .price-check i {
   opacity: 0;
-  transform: scale(0.8);
-  transition: opacity 0.2s ease;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -256,6 +257,10 @@
   font-weight: 500;
   font-size: 18px;
   margin: 12px 0 0 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
 .page-menu .menu p {
   font: 300 15px "Roboto", sans-serif;

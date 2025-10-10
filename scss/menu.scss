@@ -3,6 +3,7 @@
 @import "mixins";
 
 .page-menu {
+
   /***** Général *****/
   body {
     display: flex;
@@ -61,6 +62,10 @@
 
       h1 {
         font: 400 28px/1.2 $font-logo;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
       }
 
       .rating {
@@ -98,7 +103,7 @@
           }
         }
 
-        .heart-checkbox:checked + .heart {
+        .heart-checkbox:checked+.heart {
           .fa-regular {
             opacity: 0;
           }
@@ -142,6 +147,7 @@
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -154,19 +160,49 @@
   }
 
   // Délai pour chaque section
-  .menu-entrance .entrance:nth-child(2) { animation-delay: 0.2s; }
-  .menu-entrance .entrance:nth-child(3) { animation-delay: 0.4s; }
-  .menu-entrance .entrance:nth-child(4) { animation-delay: 0.6s; }
-  .menu-entrance .entrance:nth-child(5) { animation-delay: 0.8s; }
+  .menu-entrance .entrance:nth-child(2) {
+    animation-delay: 0.2s;
+  }
 
-  .menu-plats .entrance:nth-child(2) { animation-delay: 1.2s; }
-  .menu-plats .entrance:nth-child(3) { animation-delay: 1.4s; }
-  .menu-plats .entrance:nth-child(4) { animation-delay: 1.6s; }
+  .menu-entrance .entrance:nth-child(3) {
+    animation-delay: 0.4s;
+  }
 
-  .menu-desserts .entrance:nth-child(2) { animation-delay: 2.2s; }
-  .menu-desserts .entrance:nth-child(3) { animation-delay: 2.4s; }
-  .menu-desserts .entrance:nth-child(4) { animation-delay: 2.6s; }
-  .menu-desserts .entrance:nth-child(5) { animation-delay: 2.8s; }
+  .menu-entrance .entrance:nth-child(4) {
+    animation-delay: 0.6s;
+  }
+
+  .menu-entrance .entrance:nth-child(5) {
+    animation-delay: 0.8s;
+  }
+
+  .menu-plats .entrance:nth-child(2) {
+    animation-delay: 1.2s;
+  }
+
+  .menu-plats .entrance:nth-child(3) {
+    animation-delay: 1.4s;
+  }
+
+  .menu-plats .entrance:nth-child(4) {
+    animation-delay: 1.6s;
+  }
+
+  .menu-desserts .entrance:nth-child(2) {
+    animation-delay: 2.2s;
+  }
+
+  .menu-desserts .entrance:nth-child(3) {
+    animation-delay: 2.4s;
+  }
+
+  .menu-desserts .entrance:nth-child(4) {
+    animation-delay: 2.6s;
+  }
+
+  .menu-desserts .entrance:nth-child(5) {
+    animation-delay: 2.8s;
+  }
 
   /***** Cartes *****/
   .menu-entrance,
@@ -213,14 +249,11 @@
       width: 0;
       @include flex-center;
       border-radius: 0 15px 15px 0;
-      transition: width 0.3s ease;
       overflow: hidden;
       flex-shrink: 0;
 
       i {
         opacity: 0;
-        transform: scale(0.8);
-        transition: opacity 0.2s ease;
         @include flex-center;
         width: 20px;
         height: 20px;
@@ -255,6 +288,10 @@
     font-weight: 500;
     font-size: 18px;
     margin: 12px 0 0 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
   }
 
   .menu p {
@@ -281,10 +318,8 @@
       transition: all 0.3s ease;
 
       &:hover {
-        background: linear-gradient(
-          lighten($color-secondary, 10%),
-          lighten($color-primary, 10%)
-        );
+        background: linear-gradient(lighten($color-secondary, 10%),
+            lighten($color-primary, 10%));
         @include box-shadow(0, 4px, 10px, rgba(0, 0, 0, 0.2));
       }
     }
@@ -355,6 +390,7 @@
       h1 {
         margin-top: 50px;
       }
+
       i {
         margin-top: 30px;
       }
