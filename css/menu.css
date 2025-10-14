@@ -212,7 +212,8 @@
   font: 700 15px "Roboto", sans-serif;
   margin-right: 20px;
   margin-top: 30px;
-  transition: margin-right 0.3s ease;
+  transform: translateX(0);
+  transition: transform 0.5s ease;
 }
 .page-menu .menu .entrance .price-check {
   background: #99e2d0;
@@ -224,6 +225,11 @@
   border-radius: 0 15px 15px 0;
   overflow: hidden;
   flex-shrink: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
 }
 .page-menu .menu .entrance .price-check i {
   opacity: 0;
@@ -240,14 +246,14 @@
 .page-menu .menu .entrance:hover .price-check {
   width: 59px;
   height: 69px;
+  transform: translateX(0);
 }
 .page-menu .menu .entrance:hover .price-check i {
   opacity: 1;
-  transform: scale(1);
 }
 .page-menu .menu .entrance:hover .price {
   margin-right: 20px;
-  flex-shrink: 0;
+  transform: translateX(-50px);
 }
 .page-menu {
   /***** Textes des cartes *****/
